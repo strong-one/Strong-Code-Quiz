@@ -11,22 +11,22 @@ var time = 10;
 //create questions
 var questionArray = [
   {
-    title: "Commonly used Data types DO NOT include:1",
+    title: "Commonly used Data types DO NOT include:",
     choices: ["Strings", "Booleans", "Alerts", "Numbers"],
     answer: "Alerts",
   },
   {
-    title: "Commonly used Data types DO NOT include:2",
+    title: "Commonly used Data types DO NOT include:",
     choices: ["Strings", "Booleans", "Alerts", "Numbers"],
     answer: "Booleans",
   },
   {
-    title: "Commonly used Data types DO NOT include:3",
+    title: "Commonly used Data types DO NOT include:",
     choices: ["Strings", "Booleans", "Alerts", "Numbers"],
     answer: "Strings",
   },
   {
-    title: "Commonly used Data types DO NOT include:4",
+    title: "Commonly used Data types DO NOT include:",
     choices: ["Strings", "Booleans", "Alerts", "Numbers"],
     answer: "Numbers",
   },
@@ -49,7 +49,8 @@ document.querySelector("#start-btn").addEventListener("click", function () {
     document.querySelector(".time").textContent = time;
     //timer >= 1000 - check if we should end the game
     if (time <= 0) {
-      endGame();
+      clearInterval(timer);
+      //endGame();
     }
   }, 1000);
 
@@ -81,9 +82,7 @@ var generateQuest = function () {
     `;
   `
   <div class="question-choices">
-          <h2${currentQ.title}>
-            The condition in an if / else statement is enclosed within ________.
-          </h2>
+          <h2${currentQ.title}></h2>
         </div>
 
         <div class="answers2">
