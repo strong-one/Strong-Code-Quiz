@@ -4,7 +4,7 @@ The goal is to create a coding quiz, where user is greeted with a start screen d
 
 This assignment is proving to be very challenging the more I create. I am having to research and test different strageties to accomplish the end result. Ultimately it is showing me the importance of being able to truly understand javascript to its core.
 
-04-web-apis-homework-demo.gif![image](https://user-images.githubusercontent.com/79662753/116002581-a6256980-a5b7-11eb-86fc-e30ee2488c7c.png)
+(https://user-images.githubusercontent.com/79662753/116002581-a6256980-a5b7-11eb-86fc-e30ee2488c7c.png)
 
 
 Css reset: credit to: https://meyerweb.com/eric/tools/css/reset/
