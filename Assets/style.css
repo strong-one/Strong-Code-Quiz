@@ -1,0 +1,93 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 60px;
+  font-size: 25px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  color: white;
+  background-color: blueviolet;
+  border-radius: 20px;
+  box-shadow: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: violet;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 60px;
+}
+
+.insructions {
+  display: flex;
+  justify-content: center;
+}
+
+.start {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.q1 {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.answers1 {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.q2 {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.answers2 {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.q3 {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.answers3 {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.q4 {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.answers4 {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+.hide {
+  display: none;
+}
