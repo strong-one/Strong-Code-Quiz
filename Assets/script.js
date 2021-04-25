@@ -50,9 +50,11 @@ document.querySelector("#start-btn").addEventListener("click", function () {
     //timer >= 1000 - check if we should end the game
     if (time <= 0) {
       clearInterval(timer);
+      endGame();
       //endGame();
     }
   }, 1000);
+  // 1000 Milliseconds = 1 second
 
   //hide the start scrren
   document.querySelector("#start-screen").classList.add("hide");
