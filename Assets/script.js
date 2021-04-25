@@ -5,8 +5,8 @@ console.log("******we are connected");
 
 var questionCount = 0;
 var score = 0;
-var time = 10;
-// change time var to 120
+var time = 120;
+// change time var to 10 for quicker testing
 
 //create questions
 var questionArray = [
