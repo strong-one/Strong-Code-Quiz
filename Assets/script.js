@@ -79,6 +79,24 @@ var generateQuest = function () {
     </div>
     </section>
     `;
+  `
+  <div class="question-choices">
+          <h2${currentQ.title}>
+            The condition in an if / else statement is enclosed within ________.
+          </h2>
+        </div>
+
+        <div class="answers2">
+          <ol>
+            <li><button class="answer-choice>1: ${currentQ.choices[0]} </button></li>
+            <li><button class="answer-choice>2: ${currentQ.choices[1]}brackets</button></li>
+            <li><button class="answer-choice>3: ${currentQ.choices[2]}</button></li>
+            <li><button class="answer-choice>4: ${currentQ.choices[3]}</button></li>
+          </ol>
+        </div>
+      </section>
+  
+  `;
 
   //add the tempalte to the page and convert it into an html
   document.querySelector("#question-screen").innerHTML = template;
