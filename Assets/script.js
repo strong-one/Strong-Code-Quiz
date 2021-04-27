@@ -55,6 +55,7 @@ document.querySelector("#start-btn").addEventListener("click", function () {
   document.querySelector("#start-screen").classList.add("hide");
   //show the questions container
   document.querySelector("#question-screen").classList.remove("hide");
+
   //generate the question
   generateQuest();
 });
@@ -78,17 +79,49 @@ var generateQuest = function () {
     </section>
     `;
 
-  var template2 = `
-  <div class="question-choices">
+  var template1 = `
+  <div class="question-title">
           <h2${currentQ.title}></h2>
         </div>
 
-        <div class="question-screen1">
+        <div class="question-choices1">
           <ol>
-            <li><button class="answer-choice>1: ${currentQ.choices[0]} </button></li>
-            <li><button class="answer-choice>2: ${currentQ.choices[1]}brackets</button></li>
-            <li><button class="answer-choice>3: ${currentQ.choices[2]}</button></li>
-            <li><button class="answer-choice>4: ${currentQ.choices[3]}</button></li>
+            <li><button class="answer-choice">1: ${currentQ.choices[0]} </button></li>
+            <li><button class="answer-choice">2: ${currentQ.choices[1]}brackets</button></li>
+            <li><button class="answer-choice">3: ${currentQ.choices[2]}</button></li>
+            <li><button class="answer-choice">4: ${currentQ.choices[3]}</button></li>
+          </ol>
+        </div>
+      </section>
+  
+  `;
+  var template2 = `
+  <div class="question-title">
+          <h2${currentQ.title}></h2>
+        </div>
+
+        <div class="question-choices2">
+          <ol>
+            <li><button class="answer-choice">1: ${currentQ.choices[0]} </button></li>
+            <li><button class="answer-choice">2: ${currentQ.choices[1]}brackets</button></li>
+            <li><button class="answer-choice">3: ${currentQ.choices[2]}</button></li>
+            <li><button class="answer-choice">4: ${currentQ.choices[3]}</button></li>
+          </ol>
+        </div>
+      </section>
+  
+  `;
+  var template3 = `
+  <div class="question-title">
+          <h2${currentQ.title}></h2>
+        </div>
+
+        <div class="question-choices3">
+          <ol>
+            <li><button class="answer-choice">1: ${currentQ.choices[0]} </button></li>
+            <li><button class="answer-choice">2: ${currentQ.choices[1]}brackets</button></li>
+            <li><button class="answer-choice">3: ${currentQ.choices[2]}</button></li>
+            <li><button class="answer-choice">4: ${currentQ.choices[3]}</button></li>
           </ol>
         </div>
       </section>
@@ -98,7 +131,7 @@ var generateQuest = function () {
   //add the tempalte to the page and convert it into an html
   document.querySelector("#question-screen").innerHTML = template;
 
-  document.querySelector("#question-screen1").innerHTML = template2;
+  document.querySelector("#question-screen1").innerHTML = template1;
 };
 
 document
