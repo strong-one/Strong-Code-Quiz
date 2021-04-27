@@ -1,6 +1,3 @@
-//Test
-console.log("******we are connected");
-
 // Quiz game
 
 var questionCount = 0;
@@ -8,7 +5,6 @@ var score = 0;
 var time = 120;
 // change time var to 10 for quicker testing
 
-//create questions
 var questionArray = [
   {
     title: "Commonly used Data types DO NOT include:",
@@ -32,7 +28,6 @@ var questionArray = [
   },
 ];
 
-// Create timer
 var timer;
 
 // keep track of scores and log them
@@ -82,12 +77,13 @@ var generateQuest = function () {
     </div>
     </section>
     `;
-  `
+
+  var template2 = `
   <div class="question-choices">
           <h2${currentQ.title}></h2>
         </div>
 
-        <div class="answers2">
+        <div class="question-screen1">
           <ol>
             <li><button class="answer-choice>1: ${currentQ.choices[0]} </button></li>
             <li><button class="answer-choice>2: ${currentQ.choices[1]}brackets</button></li>
@@ -101,10 +97,20 @@ var generateQuest = function () {
 
   //add the tempalte to the page and convert it into an html
   document.querySelector("#question-screen").innerHTML = template;
+
+  document.querySelector("#question-screen1").innerHTML = template2;
 };
 
 document
   .querySelector("#question-screen")
+  .addEventListener("click", function (event) {
+    if (event.target.className.indexOf("answer-choice") > -1) {
+      answerHandling(event);
+    }
+  });
+
+document
+  .querySelector("#quesion-screen1")
   .addEventListener("click", function (event) {
     if (event.target.className.indexOf("answer-choice") > -1) {
       answerHandling(event);
