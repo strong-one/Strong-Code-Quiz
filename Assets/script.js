@@ -7,22 +7,22 @@ var time = 120;
 
 var questionArray = [
   {
-    title: "Commonly used Data types DO NOT include:",
+    title: "Commonly used Data types DO NOT include:1",
     choices: ["Strings", "Booleans", "Alerts", "Numbers"],
     answer: "Alerts",
   },
   {
-    title: "Commonly used Data types DO NOT include:",
+    title: "Commonly used Data types DO NOT include:2",
     choices: ["Strings", "Booleans", "Alerts", "Numbers"],
     answer: "Booleans",
   },
   {
-    title: "Commonly used Data types DO NOT include:",
+    title: "Commonly used Data types DO NOT include:3",
     choices: ["Strings", "Booleans", "Alerts", "Numbers"],
     answer: "Strings",
   },
   {
-    title: "Commonly used Data types DO NOT include:",
+    title: "Commonly used Data types DO NOT include:4",
     choices: ["Strings", "Booleans", "Alerts", "Numbers"],
     answer: "Numbers",
   },
@@ -44,7 +44,6 @@ document.querySelector("#start-btn").addEventListener("click", function () {
     document.querySelector(".time").textContent = time;
     //timer >= 1000 - check if we should end the game
     if (time <= 0) {
-      clearInterval(timer);
       endGame();
       //endGame();
     }
@@ -55,6 +54,8 @@ document.querySelector("#start-btn").addEventListener("click", function () {
   document.querySelector("#start-screen").classList.add("hide");
   //show the questions container
   document.querySelector("#question-screen").classList.remove("hide");
+
+  //document.querySelector("question-screen1").classList.remove("hide");
 
   //generate the question
   generateQuest();
@@ -79,59 +80,8 @@ var generateQuest = function () {
     </section>
     `;
 
-  var template1 = `
-  <div class="question-title">
-          <h2${currentQ.title}></h2>
-        </div>
-
-        <div class="question-choices1">
-          <ol>
-            <li><button class="answer-choice">1: ${currentQ.choices[0]} </button></li>
-            <li><button class="answer-choice">2: ${currentQ.choices[1]}brackets</button></li>
-            <li><button class="answer-choice">3: ${currentQ.choices[2]}</button></li>
-            <li><button class="answer-choice">4: ${currentQ.choices[3]}</button></li>
-          </ol>
-        </div>
-      </section>
-  
-  `;
-  var template2 = `
-  <div class="question-title">
-          <h2${currentQ.title}></h2>
-        </div>
-
-        <div class="question-choices2">
-          <ol>
-            <li><button class="answer-choice">1: ${currentQ.choices[0]} </button></li>
-            <li><button class="answer-choice">2: ${currentQ.choices[1]}brackets</button></li>
-            <li><button class="answer-choice">3: ${currentQ.choices[2]}</button></li>
-            <li><button class="answer-choice">4: ${currentQ.choices[3]}</button></li>
-          </ol>
-        </div>
-      </section>
-  
-  `;
-  var template3 = `
-  <div class="question-title">
-          <h2${currentQ.title}></h2>
-        </div>
-
-        <div class="question-choices3">
-          <ol>
-            <li><button class="answer-choice">1: ${currentQ.choices[0]} </button></li>
-            <li><button class="answer-choice">2: ${currentQ.choices[1]}brackets</button></li>
-            <li><button class="answer-choice">3: ${currentQ.choices[2]}</button></li>
-            <li><button class="answer-choice">4: ${currentQ.choices[3]}</button></li>
-          </ol>
-        </div>
-      </section>
-  
-  `;
-
   //add the tempalte to the page and convert it into an html
   document.querySelector("#question-screen").innerHTML = template;
-
-  document.querySelector("#question-screen1").innerHTML = template1;
 };
 
 document
@@ -142,13 +92,13 @@ document
     }
   });
 
-document
-  .querySelector("#quesion-screen1")
-  .addEventListener("click", function (event) {
-    if (event.target.className.indexOf("answer-choice") > -1) {
-      answerHandling(event);
-    }
-  });
+// document
+//   .querySelector("#quesion-screen1")
+//   .addEventListener("click", function (event) {
+//     if (event.target.className.indexOf("answer-choice") > -1) {
+//       answerHandling(event);
+//     }
+//   });
 
 var answerHandling = function (event) {
   // After question is answered correctly, display correct and go to next question
@@ -159,14 +109,50 @@ var answerHandling = function (event) {
   }
 
   //increase qCount here
+  questionCount++;
 
   //check if questrionCount === questionArray.length to see if you should generateQ or endgame()
+  if (questionCount === questionArray.length) {
+    endGame();
+  } else {
+    generateQuest();
+  }
 };
 
-// If question is answered wrong same question and answers stay until answered correctly - then moves to next
+var endGame = function () {
+  //stop timer
+  clearInterval(timer);
+  //show end screen
+  document.querySelector("#end-screen").classList.remove("hide");
+  //display score
+  document.querySelector(".score").textContent = score;
+  //hide questions
+  document.querySelector("#question-screen").classList.add("hide");
+};
 
-//if question is answered incorrectly time is docked
+// store in local storage - understand shape and design of data
 
-// once all questions are answered, score is logged initials are entered and put into a high score box
+// data = {
+//   name: "Tom",
+//   score: 2
+// }
 
-// high scores are stored in box from high to low and box is able to be cleared out.
+// add event listener to submit btn to handle local store data
+// looking for an element with the id of submit, adding event listener "click" once clicked, the function runs.
+document.querySelector("#submit").addEventListener("click", function () {
+  //save information
+
+  //get the old information if there is any, json is not JS readable, so parse turns in into JS readable, getting the item of the input of high score. OR if it is false (no previous score), then it will take input.
+  var oldInfo = JSON.parse(localStorage.getItem("highscores")) || [];
+  //get initials - looking for an element with the id of input, value is what user types in.
+  var initials = document.querySelector("#input").value;
+  //build obj - data - what user inputs
+  var data = {
+    name: initials,
+    score: score,
+  };
+  //add the obj into the old info array - if there is no previous input or old input matches, then new data (what user types in) gets pushed to old info (updated info at this point)
+  oldInfo.push(data);
+  //save it - this is going to local storage, settign the input from high scores and stringify turns JSON object (parse) to regulas JSON
+  localStorage.setItem("highscores", JSON.stringify(oldInfo));
+});
