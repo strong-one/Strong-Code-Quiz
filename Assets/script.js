@@ -7,24 +7,30 @@ var time = 120;
 
 var questionArray = [
   {
-    title: "Commonly used Data types DO NOT include:1",
+    title: "Commonly used Data types DO NOT include:",
     choices: ["Strings", "Booleans", "Alerts", "Numbers"],
     answer: "Alerts",
   },
   {
-    title: "Commonly used Data types DO NOT include:2",
-    choices: ["Strings", "Booleans", "Alerts", "Numbers"],
-    answer: "Booleans",
+    title: "The condition in an if / else statement is enclosed within ______:",
+    choices: ["Quotes", "Curly brackets", "Parentheses", "Square brackets"],
+    answer: "Parentheses",
   },
   {
-    title: "Commonly used Data types DO NOT include:3",
-    choices: ["Strings", "Booleans", "Alerts", "Numbers"],
-    answer: "Strings",
+    title: "Arrays in JavaScript can be used to store ______:",
+    choices: [
+      "Numbers and strings",
+      "Other arrays",
+      "Booleans",
+      "All of the above",
+    ],
+    answer: "All of the above",
   },
   {
-    title: "Commonly used Data types DO NOT include:4",
-    choices: ["Strings", "Booleans", "Alerts", "Numbers"],
-    answer: "Numbers",
+    title:
+      "String values must be enclosed within _____ when being assigned to variables",
+    choices: ["Commas", "Curly brackets", "Quotes", "Parentheses"],
+    answer: "Quotes",
   },
 ];
 
